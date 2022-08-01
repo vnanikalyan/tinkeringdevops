@@ -1,0 +1,11 @@
+[all:vars]
+ENV_NAME=tv_us_dev
+env_name=tv_us_dev
+PROJECT=projectvnk
+project=provnk
+
+[awsclihost]
+localhost
+
+[awsclihost:vars]
+ansible_connection=local

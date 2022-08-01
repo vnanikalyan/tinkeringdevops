@@ -1,0 +1,1 @@
+ansible-playbook runshell.yml --extra-vars '{"parsed_aws_access_key":"ASIAY2CFJRKHKVCXUPNT","parsed_aws_secret_key":"eNh8+lSGcD4F+SqGBKPD4yzqSmGmTcOJb6vp40bY"}' --verbose

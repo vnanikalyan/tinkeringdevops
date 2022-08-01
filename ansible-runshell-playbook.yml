@@ -1,0 +1,33 @@
+---
+- name: learning
+  hosts: all
+
+  vars_files:
+    - "vars/main.yml"
+    
+  tasks:
+  - name : debug info
+    debug:
+      msg: 
+        - SCRIPT_NAME is {{ SCRIPT_NAME }}
+        - ENVIRONMENT is {{ ENVIRONMENT }}
+        - ORG_NAME is {{ ORG_NAME }}
+        - PORT is {{ PORT }}
+        - S3_BUCKET_NAME is {{ S3_BUCKET_NAME }}
+
+  - name: shell script
+    shell: bash {{ SCRIPT_NAME }}.sh {{ ENVIRONMENT }} {{ ORG_NAME }} {{ PORT }} {{ S3_BUCKET_NAME }}>> kalyan.txt
+
+  - name: create directory
+    shell: mkdir -p kalyan
+
+  - name: copy file
+    shell: cp kalyan.txt kalyan/kalyan.txt
+
+  - name: s3 Upload
+    s3_sync:
+      bucket: "app-s3"
+      region: "us-east-1"
+      file_root: kalyan
+      #aws_access_key: "{{ parsed_aws_access_key }}"
+      #aws_secret_key: "{{ parsed_aws_secret_key }}"

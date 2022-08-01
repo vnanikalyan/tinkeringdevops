@@ -1,0 +1,10 @@
+---
+- name: learning
+  hosts: all
+
+  vars_files:
+    - "vars/main.yml"
+
+  tasks:
+  - name: script
+    script: nani.sh {{ firstname }} {{ lastname }} >> kalyan.txt

@@ -1,0 +1,18 @@
+aws_region: us-east-1
+parsed_aws_env: dev
+region_abb: use1
+
+firstname: "Nani_Kalyan"
+lastname: "Varasala"
+
+SCRIPT_NAME: "kalyan"
+ENVIRONMENT: "dev"
+ORG_NAME: "Org1"
+PORT: 7051
+S3_BUCKET_NAME: "app-s3"
+
+aws_infra_deploy_template_params:
+  AppNamePrefix: "vnk"  
+  AppInstance: "{{ parsed_aws_env }}"
+  Delimeter: "-"
+  RegionDefinition: "{{ region_abb }}"

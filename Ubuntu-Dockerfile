@@ -1,0 +1,21 @@
+#This is a sample Image 
+FROM ubuntu:20.04
+
+RUN apt update
+
+RUN apt install -y software-properties-common
+#RUN add-apt-repository --yes --update ppa:ansible/ansible
+RUN apt install -y ansible
+RUN apt -y install nano
+
+RUN apt install -y awscli
+RUN apt-get update
+RUN apt install -y python3-pip
+RUN pip3 install boto3
+RUN pip3 install lxml
+RUN pip3 install --upgrade awscli
+
+# Create app directory
+WORKDIR /app
+
+COPY . .
