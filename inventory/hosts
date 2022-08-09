@@ -1,6 +1,6 @@
 [all:vars]
-ENV_NAME=tv_us_dev
-env_name=tv_us_dev
+ENV_NAME=vnk_ap_dev
+env_name=vnk_ap_dev
 PROJECT=projectvnk
 project=provnk
 
