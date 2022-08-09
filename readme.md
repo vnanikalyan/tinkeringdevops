@@ -4,7 +4,7 @@
 
 #### Task-1
 
-```
+```console
  - name: create directory
    shell: mkdir -p logs
 ```
@@ -14,7 +14,7 @@
 
 #### Task-2
 
-```
+```console
  - name: shell script
    shell: bash {{ SCRIPT_NAME }}.sh {{ ENVIRONMENT }} {{ ORG_NAME }} {{ PORT }} >> logs/log.txt
 ```
@@ -25,7 +25,7 @@
 
 #### Task-3
 
-```
+```console
  - name: s3 Upload
    s3_sync:
     bucket: "s3-bucket-name"
