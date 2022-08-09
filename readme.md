@@ -9,7 +9,8 @@
    shell: mkdir -p logs
 ```
 
-- We are creating the folder logs to store the log files
+- We are creating the folder logs to store the log files. 
+- -p parameter is given if in case the folder already exists it will not throw an error.
 
 #### Task-2
 
@@ -26,7 +27,7 @@
 
 ```
  - name: s3 Upload
-  s3_sync:
+   s3_sync:
     bucket: "s3-bucket-name"
     region: "ap-south-1"
     file_root: logs`
